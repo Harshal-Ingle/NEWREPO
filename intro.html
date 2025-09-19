@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Harshal Ingle</title>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .name-container {
+        font-family: 'Netflix Sans', Arial, sans-serif;
+        font-size: 8vw;
+        color: #e50914;
+        animation: fadeIn 2s ease-out forwards;
+        opacity: 0;
+        transition: transform 0.2s ease-in-out;
+        user-select: none;
+        font-weight: bold;
+
+        /* Change this value to decrease the gap */
+        letter-spacing: -0.05em; /* A negative value will pull the letters closer together */
+
+        transform: perspective(1000px) rotateX(2deg) translateY(-0.5%);
+        }   
+
+        .name-container:active {
+            transform: perspective(1000px) rotateX(2deg) translateY(-0.5%) scale(0.98);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* New animation for the grow and disappear effect */
+        @keyframes growAndDisappear {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="name-container" onclick="playNetflixSoundAndRedirect()">
+        HARSHAL INGLE
+    </div>
+
+    <audio id="netflixSound" src="netflix_intro_sound.mp3" preload="auto"></audio>
+    <script>
+        function playNetflixSoundAndRedirect() {
+            var audio = document.getElementById('netflixSound');
+            var nameContainer = document.querySelector('.name-container');
+
+            // Add the new animation class
+            nameContainer.style.animation = 'growAndDisappear 1s ease-in-out forwards';
+
+            audio.play();
+            
+            // Wait for both the sound and animation to finish before redirecting
+            setTimeout(function() {
+                window.location.href = 'index.html';
+            }, 2000); // 1000ms matches the duration of the animation
+        }
+    </script>
+
+</body>
+</html>
