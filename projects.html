@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshal Ingle | Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General & Body Styles */
+        body {
+            background-color: #141414;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: 500;
+        }
+
+        .portfolio-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        /* Navbar Styles (copy from index.html) */
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            align-items: center;
+            padding: 15px 5%;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        #navbar ul li a:hover, #navbar ul li a.active {
+            color: #e50914;
+        }
+
+        .btn {
+            padding: 8px 18px;
+            border: 2px solid #e50914;
+            border-radius: 4px;
+            background-color: #e50914;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .hire-me-btn {
+            border: none;
+        }
+
+        /* Projects Section Styles (New for this page) */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: #212121;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 5px solid #e50914;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            text-decoration: none; /* Removed the underline */
+            color: inherit; /* Inherits text color from parent */
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.5); /* Stronger, red glow */
+            border-color: #e50914;
+        }
+
+        .project-card-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .project-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.6s ease;
+        }
+         /* It pops up the image of projects */
+
+        /* .project-card-image img:hover {
+            transform: scale(1.1);
+        } */
+
+        .project-card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .project-card-content h3 {
+            font-size: 1.2rem;
+            margin: 0 0 10px;
+            color: #e50914;
+        }
+
+        .project-card-content p {
+            font-size: 0.9em;
+            color: #aaa;
+            margin: 0 0 15px;
+            flex-grow: 1;
+        }
+        
+        .tech-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech-icons span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8em;
+            color: #fff;
+            background-color: #333;
+            padding: 5px 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* New Hover Effect */
+        .tech-icons span:hover {
+            background-color: #e50914;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+    <div class="logo">Harshal Ingle</div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="hire-me.html">Hire Me</a></li>
+    </ul>
+    </nav>
+    
+    <section id="projects" class="portfolio-section" style="padding-top: 100px;">
+        <div class="section-header">
+            <h2>Projects</h2>
+        </div>
+        <div class="project-grid">
+            <a href="https://github.com/Harshal-Ingle/Superstore-Sales-Analysis" class="project-card">
+                <div class="project-card-image">
+                    <img src="superstore 1.png" alt="superstore sales analysis">
+                </div>
+                <div class="project-card-content">
+                    <h3>Superstore Sales Analysis with Python</h3>
+                    <p>This is my personal project where I have Analyze Superstore sales data with Python to find key trends and problems. 
+                        The final output is a set of business recommendations to boost profitability.</p>
+                    <div class="tech-icons">
+                        <span><i class="fab fa-python"></i> Python</span>
+                        <span><i class="fas fa-database"></i> SQL</span>
+                        </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/Harshal-Ingle/Netflix-Dashboard-Powerbi" class="project-card">
+                <div class="project-card-image">
+                    <img src="netflix.png" alt="Netflix Analysis using Power BI">
+                </div>
+                <div class="project-card-content">
+                    <h3>Netflix Analysis using Power BI</h3>
+                    <p>I have utilized Power BI to analyze a Netflix movie dataset and create an interactive dashboard. 
+                        The final outcome will be a series of recommendations for content strategy, such as focusing on popular genres like Action and Comedy.</p>
+                    <div class="tech-icons">
+                        <span><i class="fab fa-python"></i> Python</span>
+                        <span><i class="fa-brands fa-microsoft"></i> Power BI</span>
+                        </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/Harshal-Ingle/SQL-Data-Cleaning-Nashville-Housing" class="project-card">
+                <div class="project-card-image">
+                    <img src="nashville.png" alt="Avataar Ventures Website">
+                </div>
+                <div class="project-card-content">
+                    <h3>SQL-Data-Cleaning-Nashville-Housing</h3>
+                    <p>I have performed comprehensive data cleaning on the Nashville Housing dataset using SQL to prepare it for analysis. 
+                        The end result is a clean, reliable dataset that can be used for real estate market analysis, trend identification, and strategic planning.</p>
+                    <div class="tech-icons">
+                        <span><i class="fas fa-database"></i> SQL</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/Harshal-Ingle/Telecom-Customer-Churn-Analysis" class="project-card">
+                <div class="project-card-image">
+                    <img src="churn 2.png" alt="Avataar Ventures Website">
+                </div>
+                <div class="project-card-content">
+                    <h3>Telecom Customer Churn Analysis</h3>
+                    <p>I have performed a comprehensive customer churn analysis using Python to identify key drivers of churn and provide actionable recommendations for targeted retention strategies.</p>
+                    <div class="tech-icons">
+                        <span><i class="fas fa-database"></i> SQL</span>
+                        <span><i class="fas fa-file-excel"></i> Excel</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://public.tableau.com/app/profile/harshal.ingle/viz/HRDashboard_17389491444200/HRSummary" class="project-card">
+                <div class="project-card-image">
+                    <img src="hr 2.png" alt="HR Analytics dashboard">
+                </div>
+                <div class="project-card-content">
+                    <h3> HR Analytics Tableau</h3>
+                    <p>This project is a Tableau-based HR analytics dashboard that visualizes key workforce metrics, providing actionable insights for data-driven decisions.</p>
+                    <div class="tech-icons">
+                        <span><i class="fas fa-chart-bar"></i> Tableau</span>
+                        <span><i class="fas fa-file-excel"></i> Excel</span>
+                        </div>
+                </div>
+            </a>
+
+                <a href="https://github.com/Harshal-Ingle/Sales_Dashboard_Tableau" class="project-card">
+                <div class="project-card-image">
+                    <img src="sales (2).png" alt="HR Analytics dashboard">
+                </div>
+                <div class="project-card-content">
+                    <h3> Sales and Customer Dashboard: A Comprehensive Analysis (2023)</h3>
+                    <p>I have created a dynamic dashboard for 2023 sales analysis, visualizing key metrics, profit trends, and subcategory performance to drive strategic business decisions.</p>
+                    <div class="tech-icons">
+                        <span><i class="fas fa-chart-bar"></i>Tableau</span>
+                        </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+</body>
+</html>

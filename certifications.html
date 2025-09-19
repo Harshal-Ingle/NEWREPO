@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshal Ingle | Certifications</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General & Body Styles */
+        body {
+            background-color: #141414;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 500;
+        }
+
+        .portfolio-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        /* Navbar Styles (Consistent across all pages) */
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            align-items: center;
+            padding: 15px 5%;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        #navbar ul li a:hover {
+            color: #e50914; 
+        }
+        #navbar ul li a.active {
+            color: #e50914; 
+        }
+
+        /* Certifications Section Styles (NEW) */
+        .section-header h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 10px;
+            color: #fff;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #e50914;
+            border-radius: 2px;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding-top: 50px;
+        }
+
+        .cert-card {
+            background-color: #212121;
+            border-radius: 10px;
+            padding: 25px;
+            text-decoration: none;
+            color: #fff;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border-color: #e50914;
+        }
+
+        .cert-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .cert-icon {
+            font-size: 2.5rem;
+            color: #e50914;
+            line-height: 1;
+        }
+
+        .cert-link-icon {
+            font-size: 1.2rem;
+            color: #e50914;
+        }
+
+        .cert-card-content h4 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #fff;
+        }
+
+        .cert-card-content p {
+            font-size: 0.9rem;
+            color: #bbb;
+            margin: 5px 0;
+        }
+
+        .cert-card-content p.date {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Harshal Ingle</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="hire-me.html">Hire Me</a></li>
+        </ul>
+    </nav>
+    
+    <section class="portfolio-section" style="padding-top: 100px;">
+        <h2 class="section-header">Certifications</h2>
+
+        <div class="cert-grid">
+            
+            <a href="Google Professional Certificate.pdf" class="cert-card" target="_blank">
+                <div class="cert-card-header">
+                    <i class="fab fa-google cert-icon"></i>
+                    <i class="fas fa-external-link-alt cert-link-icon"></i>
+                </div>
+                <div class="cert-card-content">
+                    <h4>Google Certified Data Analyst</h4>
+                    <p>Google</p>
+                    <p class="date">Issued March 2025</p>
+                </div>
+            </a>
+            
+            <a href="Microsoft.pdf" class="cert-card" target="_blank">
+                <div class="cert-card-header">
+                    <i class="fab fa-microsoft cert-icon"></i>
+                    <i class="fas fa-external-link-alt cert-link-icon"></i>
+                </div>
+                <div class="cert-card-content">
+                    <h4>Power BI Data Analyst Associate</h4>
+                    <p>Microsoft</p>
+                    <p class="date">Issued Oct 2024</p>
+                </div>
+            </a>
+
+            <a href="SQL_Udemy_Certificate.pdf" class="cert-card" target="_blank">
+                <div class="cert-card-header">
+                    <i class="fas fa-graduation-cap cert-icon"></i>
+                    <i class="fas fa-external-link-alt cert-link-icon"></i>
+                </div>
+                <div class="cert-card-content">
+                    <h4>The Complete SQL Bootcamp</h4>
+                    <p>Udemy</p>
+                    <p class="date">Issued Oct 2024</p>
+                </div>
+            </a>
+
+            <a href="cisco.pdf" class="cert-card" target="_blank">
+                <div class="cert-card-header">
+                    <i class="fas fa-network-wired cert-icon"></i>
+                    <i class="fas fa-external-link-alt cert-link-icon"></i>
+                </div>
+                <div class="cert-card-content">
+                    <h4>Data Analytics Essentials</h4>
+                    <p>Cisco</p>
+                    <p class="date">Issued Jul 2024</p>
+                </div>
+            </a>
+
+            <a href="Tableau Desktop Certificate.pdf" class="cert-card" target="_blank">
+                <div class="cert-card-header">
+                    <i class="fas fa-graduation-cap cert-icon"></i>
+                    <i class="fas fa-external-link-alt cert-link-icon"></i>
+                </div>
+                <div class="cert-card-content">
+                    <h4>Tableau Certified Data Analyst</h4>
+                    <p>Udemy</p>
+                    <p class="date">Issued Dec 2024</p>
+                </div>
+            </a>
+
+            <a href="be10x.pdf" class="cert-card" target="_blank">
+                <div class="cert-card-header">
+                    <i class="fas fa-cube cert-icon"></i>
+                    <i class="fas fa-external-link-alt cert-link-icon"></i>
+                </div>
+                <div class="cert-card-content">
+                    <h4>Machine Learning with Python</h4>
+                    <p>be10x</p>
+                    <p class="date">Issued Feb 2025</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshal Ingle | Awards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General & Body Styles */
+        body {
+            background-color: #141414;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: 500;
+        }
+
+        .portfolio-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        /* Navbar Styles */
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            align-items: center;
+            padding: 15px 5%;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        #navbar ul li a:hover, #navbar ul li a.active {
+            color: #e50914;
+        }
+
+        /* Awards Section Styles */
+        .section-header h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            padding-bottom: 10px;
+            color: #fff;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #e50914;
+            border-radius: 2px;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
+
+        .award-card {
+            background-color: #212121;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .award-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 8px 20px rgba(229, 9, 20, 0.5);
+        }
+
+        .award-image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;             
+        }
+
+        .award-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .award-card:hover .award-image-container img {
+            transform: scale(1.1);
+        } 
+
+        .award-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .award-icon {
+            font-size: 2rem;
+            color: gold;
+            margin-bottom: 10px;
+        }
+        
+        .award-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #e50914;
+            margin: 0;
+        }
+
+        .award-description {
+            font-size: 1rem;
+            color: #bbb;
+            margin: 10px 0 0;
+            text-align: center;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Harshal Ingle</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="hire-me.html">Hire Me</a></li>
+        </ul>
+    </nav>
+    
+    <section id="awards" class="portfolio-section" style="padding-top: 100px;">
+        <div class="section-header">
+            <h2>Recognitions & Accolades</h2>
+        </div>
+        <div class="awards-grid">
+
+            <div class="award-card">
+                <div class="award-image-container">
+                    <img src="2023.jpg" alt="Award 1">
+                </div>
+                <div class="award-content">
+                    <i class="fas fa-trophy award-icon"></i>
+                    <h3 class="award-title">AIR 2nd Prize – SAE TIFAN 2023</h3>
+                    <p class="award-description">Awarded AIR 2nd prize at SAE TIFAN 2023 for leading innovative design and performance excellence in agricultural vehicle engineering.</p>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-image-container">
+                    <img src="2024.jpg" alt="Award 2">
+                </div>
+                <div class="award-content">
+                    <i class="fas fa-medal award-icon"></i>
+                    <h3 class="award-title">Jury Award – SAE TIFAN 2024</h3>
+                    <p class="award-description">Honored with the Jury Award at SAE TIFAN 2024 for demonstrating exceptional innovation, teamwork, and technical expertise in agricultural vehicle design.</p>
+                </div>
+            </div>
+            
+            <div class="award-card">
+                <div class="award-image-container">
+                    <img src="MESA.jpg" alt="Award 3">
+                </div>
+                <div class="award-content">
+                    <i class="fas fa-award award-icon"></i>
+                    <h3 class="award-title">Sports Secretary – MESA (2024)</h3>
+                    <p class="award-description">Elected as Sports Secretary of the Mechanical Engineering Students’ Association (MESA) in 2024, driving student engagement and leadership in sports and extracurricular activities.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,457 @@
+/* General & Body Styles */
+body {
+    background-color: #141414;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 500;
+}
+
+.portfolio-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #e50914;
+    border-left: 5px solid #e50914;
+    padding-left: 15px;
+}
+
+.tech-stack {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+/* Navigation Bar */
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 15px 5%;
+    transition: background-color 0.3s ease
+}
+
+#navbar.scrolled {
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #e50914;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+#navbar ul li a:hover, #navbar ul li a.active {
+    color: #e50914;
+}
+
+.btn {
+    padding: 8px 20px;
+    border: 2px solid #e50914;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #e50914;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #e50914;
+    color: #fff;
+}
+
+.hire-me-btn {
+    background-color: #e50914;
+    color: #fff;
+}
+
+.hire-me-btn:hover {
+    background-color: #b80710;
+}
+
+/* Hero Section */
+#hero-section {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    overflow: hidden;
+    color: #fff;
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+
+#hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-size: 2.7rem;
+    margin-bottom: 10px;
+}
+
+.hero-buttons {
+    margin-top: 10px;
+    display: inline-flex;
+    justify-content: start;
+    gap: 20px;
+}
+
+.btn {
+    padding: 7px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 3px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.resume-btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+}
+
+.linkedin-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: none;
+}
+
+.resume-btn:hover, .linkedin-btn:hover {
+    background-color: #555;
+    color: #fff;
+    border-color: #555;
+}
+
+/* Movie Strips */
+#top-picks {
+    margin-bottom: 60px;
+}
+
+.movie-strip {
+    padding: 2px 5;
+    margin-top: -25px;
+}
+
+.movie-strip h2 {
+    font-size: 1.4rem;
+    margin-left: 5%;
+    margin-bottom: 8px;
+    margin-top: 45px;
+}
+
+.strip-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 5%;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+}
+
+.strip-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.strip-container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 4px;
+}
+
+.strip-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.movie-card {
+    flex-shrink: 0;
+    width: 250px;
+    height: 150px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+    background-color: #e50914;
+    color: #fff;
+}
+
+/* Added for image masking */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0;
+}
+
+/* New icon styling for cards */
+.card-icon {
+    font-size: 5rem;
+    color: #e50914;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.card-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 15px 10px 5px;
+    font-weight: bold;
+    font-size: 1.1em;
+    z-index: 2;
+    /* text-align: center; */
+    /* margin-top: 12px; */
+}
+
+/* Experience Section (Timeline) */
+.timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background-color: #e50914;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 5px;
+    left: -32px;
+    width: 20px;
+    height: 20px;
+    background-color: #e50914;
+    border-radius: 50%;
+    border: 4px solid #141414;
+}
+
+.timeline-content {
+    background-color: #282828;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.job-title {
+    color: #e50914;
+}
+
+.job-duration {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-top: -10px;
+}
+
+/* Skills Section */
+.skill-category {
+    margin-bottom: 40px;
+}
+
+.skill-category h3 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #282828;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.skill-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.skill-card span {
+    display: block;
+    font-size: 0.9em;
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #282828;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-size: 1.4rem;
+    margin: 15px 15px 5px;
+    color: #e50914;
+}
+
+.project-card p {
+    margin: 0 15px 15px;
+}
+
+/* Hire Me Section */
+.contact-info {
+    background-color: #282828;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .movie-strip {
+        margin-top: 0;
+    }
+
+    .portfolio-section {
+        padding: 40px 5%;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+#continue-watching {
+    margin-bottom: 50px;
+}

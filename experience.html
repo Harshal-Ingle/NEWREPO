@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshal Ingle | Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General & Body Styles */
+        body {
+            background-color: #141414;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: 500;
+        }
+
+        .portfolio-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        /* Navbar Styles (copy from index.html, skills.html, projects.html) */
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            align-items: center;
+            padding: 15px 5%;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        /* Navbar Hover Effect */
+        #navbar ul li a:hover {
+            color: #e50914; /* Red color on hover */
+        }
+        /* Active link for the current page */
+        #navbar ul li a.active {
+            color: #e50914; 
+        }
+
+        .btn {
+            padding: 8px 18px;
+            border: 2px solid #e50914;
+            border-radius: 4px;
+            background-color: #e50914;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .hire-me-btn {
+            border: none;
+        }
+
+        /* Experience Timeline Styles (NEW for this page) */
+        .timeline {
+            position: relative;
+            max-width: 2000px;
+            margin: 50px auto;
+            padding: 0 15px;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #e50914; /* Timeline line color */
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            z-index: 1; /* Ensure line is behind boxes */
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+            z-index: 2;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: #e50914; /* Circle background */
+            border: 4px solid #fff; /* Circle border */
+            top: 15px;
+            border-radius: 50%;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Icons inside the circles */
+        .timeline-item::after i {
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .timeline-item-left {
+            left: 0;
+            text-align: right;
+            padding-right: 40px; /* Space for the line and circle */
+        }
+
+        .timeline-item-right {
+            left: 50%;
+            padding-left: 40px; /* Space for the line and circle */
+        }
+
+        .timeline-item-right::after {
+            left: -17px;
+        }
+        
+        /* Specific Icon Styling for Education and others */
+        .timeline-item.experience::after {
+            background-color: #e50914; /* Red color for work experience */
+            border-color: #e50914;
+        }
+        .timeline-item.education::after {
+            background-color: #ff69b4; /* Pink color for education */
+            border-color: #ff69b4;
+        }
+        
+        .timeline-item.start::after {
+            background-color: #21a366; /* Green color for the start icon */
+            border-color: #21a366;
+        }
+
+
+        .timeline-content {
+            padding: 20px;
+            background-color: #282828; /* Default Box background color */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, background-color 0.3s;
+            color: #fff; /* Default text color */
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            background-color: #e50914; /* Highlight color on hover */
+            color: #fff;
+        }
+
+        .timeline-item:hover .timeline-content h3,
+        .timeline-item:hover .timeline-content p,
+        .timeline-item:hover .timeline-content ul li {
+            color: #fff; /* Ensure text remains white on hover */
+        }
+
+        .timeline-content h3 {
+            margin-top: 0;
+            color: #e50914; /* Default Title color */
+            font-size: 1.3rem;
+        }
+        .timeline-content h3 span {
+            font-size: 0.9em;
+            color: #fff; /* Default Company name color */
+        }
+
+        .timeline-content p {
+            font-size: 0.9em;
+            color: #ccc; /* Default paragraph color */
+            margin-bottom: 10px;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.85em;
+            color: #ccc; /* Default list item color */
+        }
+
+        .timeline-content ul li {
+            position: relative;
+            margin-bottom: 5px;
+            padding-left: 20px;
+        }
+
+        .timeline-content ul li::before {
+            content: '•'; /* Bullet point */
+            color: #e50914;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .timeline-date {
+            text-align: center;
+            font-size: 0.9em;
+            color: #bbb;
+            margin-top: 10px;
+        }
+        .timeline-item-left .timeline-date {
+            position: absolute;
+            right: -100px; /* Position date to the right of the line for left items */
+            top: 20px;
+            width: 80px;
+            text-align: left;
+        }
+        .timeline-item-right .timeline-date {
+            position: absolute;
+            left: -100px; /* Position date to the left of the line for right items */
+            top: 20px;
+            width: 80px;
+            text-align: right;
+        }
+        
+        /* New Styles for all timeline items using nth-child */
+        .timeline-item:nth-child(1) .timeline-content {
+            background-color: #08b9ff; /* Sky Blue */
+            color: #000;
+        }
+        .timeline-item:nth-child(1) .timeline-content h3,
+        .timeline-item:nth-child(1) .timeline-content h3 span,
+        .timeline-item:nth-child(1) .timeline-content p,
+        .timeline-item:nth-child(1) .timeline-content ul li,
+        .timeline-item:nth-child(1) .timeline-content ul li::before {
+            color: #000;
+        }
+        .timeline-item:nth-child(1) .timeline-content h3 {
+            color: #000;
+        }
+
+        .timeline-item:nth-child(2) .timeline-content {
+            background-color: #FFFFFF; /* White */
+            color: #000;
+        }
+        .timeline-item:nth-child(2) .timeline-content h3,
+        .timeline-item:nth-child(2) .timeline-content h3 span,
+        .timeline-item:nth-child(2) .timeline-content p,
+        .timeline-item:nth-child(2) .timeline-content ul li,
+        .timeline-item:nth-child(2) .timeline-content ul li::before {
+            color: #000;
+        }
+        .timeline-item:nth-child(2) .timeline-content h3 {
+            color: #000;
+        }
+
+        .timeline-item:nth-child(3) .timeline-content {
+            background-color: #FFB6C1; /* Soft Pink */
+            color: #000;
+        }
+        .timeline-item:nth-child(3) .timeline-content h3,
+        .timeline-item:nth-child(3) .timeline-content h3 span,
+        .timeline-item:nth-child(3) .timeline-content p,
+        .timeline-item:nth-child(3) .timeline-content ul li,
+        .timeline-item:nth-child(3) .timeline-content ul li::before {
+            color: #000;
+        }
+        .timeline-item:nth-child(3) .timeline-content h3 {
+            color: #000;
+        }
+        
+        /* Smaller font size for "Bachelor's" */
+        .timeline-item:nth-child(3) .timeline-content h3 .bachelor-text {
+            font-size: 0.8em;
+        }
+
+
+        /* Adjust for smaller screens */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 10px;
+            }
+            .timeline-item::after {
+                left: 14px;
+            }
+            .timeline-item-right {
+                left: 0%;
+            }
+            .timeline-item-left::after {
+                left: 14px;
+            }
+            .timeline-item-left .timeline-date,
+            .timeline-item-right .timeline-date {
+                position: relative; /* Reset position for smaller screens */
+                left: auto;
+                right: auto;
+                text-align: left;
+                margin-bottom: 10px;
+                padding-left: 0;
+                top: auto;
+            }
+            .timeline-item-left {
+                text-align: left; /* Align text left */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Harshal Ingle</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html" class="active">Experience</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="hire-me.html">Hire Me</a></li>
+        </ul>
+    </nav>
+    
+    <section class="portfolio-section" style="padding-top: 100px;">
+        <div class="section-header">
+            <h2 style="text-align: center;"><i class="fas fa-calendar-alt"></i> Work Experience & Education Timeline</h2>
+        </div>
+
+        <div class="timeline">
+            
+            <div class="timeline-item timeline-item-right">
+                <div class="timeline-content">
+                    <h3>Data Analyst Intern KultureHire</h3>
+                    <p>Excel, SQL, Power BI</p>
+                    <ul>
+                        <li>Built Tableau dashboards for KPIs (e.g., MRR), saving 10+ hours weekly in reporting.</li>
+                        <li>Consolidated unstructured data, generating ₹1,00,000 in new product revenue.</li>
+                        <li>Co-architected a scalable data pipeline with 5-member team, enabling 100K+ daily active users.</li>
+                    </ul>
+                </div>
+                <div class="timeline-date">Oct 2024 - Dec 2024</div>
+            </div>
+
+            <div class="timeline-item timeline-item-left">
+                <div class="timeline-content">
+                    <h3>Data Analyst Intern Accenture</h3>
+                    <p>Python, Power BI, Excel</p>
+                    <ul>
+                        <li>Automated data cleaning in SQL/Excel, boosting accuracy by 25% and saving 8+ hours weekly.</li>
+                        <li>Designed Power BI dashboards, improving KPI visibility and decision-making speed.</li>
+                        <li>Conducted Python EDA, driving a 15% increase in forecasting accuracy.</li>
+                    </ul>
+                </div>
+                <div class="timeline-date">June 2024 - Sep 2024</div>
+            </div>
+
+            <div class="timeline-item timeline-item-right">
+                <div class="timeline-content">
+                    <h3>Deogiri Institute of Engineering and Management Studies <br><span class="bachelor-text">Bachelor's</span></h3>
+                    <p>We have won the National level competition twice in 2 years.</p>
+                </div>
+                <div class="timeline-date">Nov 2022 - July 2025</div>
+            </div>
+            <div class="timeline-item timeline-item-left start">
+                </div>
+        </div>
+    </section>
+
+</body>
+</html>

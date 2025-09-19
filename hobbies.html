@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshal Ingle | Hobbies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General & Body Styles */
+        body {
+            background-color: #141414;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 500;
+        }
+
+        .portfolio-section {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        /* Navbar Styles (Consistent across all pages) */
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-start;
+            gap: 40px;
+            align-items: center;
+            padding: 15px 5%;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e50914;
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        #navbar ul li a:hover {
+            color: #e50914; 
+        }
+        #navbar ul li a.active {
+            color: #e50914; 
+        }
+
+        /* Hobbies Section Styles (NEW) */
+        .section-header h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 10px;
+            color: #fff;
+        }
+
+        .section-header h2 i {
+            font-size: 1.2em;
+            vertical-align: middle;
+            margin-right: 15px;
+            color: #e50914;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 80px;
+            height: 4px;
+            background-color: #e50914;
+            border-radius: 2px;
+        }
+
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding-top: 50px;
+        }
+
+        .hobby-card {
+            background-color: #212121;
+            border-radius: 10px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .hobby-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-card:hover .hobby-card-image {
+            transform: scale(1.1);
+        }
+
+        .hobby-title {
+            font-size: 1.5rem;
+            margin: 15px 0 5px;
+            color: #e50914;
+        }
+
+        .hobby-description {
+            font-size: 0.95rem;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Harshal Ingle</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="hire-me.html">Hire Me</a></li>
+        </ul>
+    </nav>
+    
+    <section class="portfolio-section" style="padding-top: 100px;">
+        <div class="section-header">
+            <h2><i class="fas fa-heart"></i> My Passions & Pursuits</h2>
+        </div>
+
+        <div class="hobby-grid">
+            
+            <div class="hobby-card">
+                <img src="cricket.jpg" alt="cricket" class="hobby-card-image">
+                <h4 class="hobby-title">Cricket</h4>
+                <p class="hobby-description"> love playing cricket, where passion meets precision on the pitch.”</p>
+            </div>
+            
+            <div class="hobby-card">
+                <img src="poetry.jpg" alt="poetry" class="hobby-card-image">
+                <h4 class="hobby-title">Reciting and Reading Poetries</h4>
+                <p class="hobby-description">I love writing poetries, where emotions find their rhythm and words paint the soul.</p>
+            </div>
+
+            <div class="hobby-card">
+                <img src="singing.jpg" alt="singing" class="hobby-card-image">
+                <h4 class="hobby-title">Singing</h4>
+                <p class="hobby-description">I love singing, where melody becomes the voice of my heart.”</p>
+            </div>
+
+            <div class="hobby-card">
+                <img src="walking alone.jpg" alt="Walking Alone" class="hobby-card-image">
+                <h4 class="hobby-title">Spending time with Myself</h4>
+                <p class="hobby-description">I love enjoying my own company, where silence turns into peace and reflection.</p>
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
